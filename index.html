@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Smart Store | المتجر الذكي التعليمي</title>
+    <meta name="description" content="منصة متقدمة للمنتجات الرقمية والمادية تدعم الذكاء الاصطناعي، الإتاحة للجميع، منتجات أمازون، وبناء السير الذاتية ATS">
+    
+    <!-- خطوط حديثة -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- مكتبة الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ملف التنسيق -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- شريط الإتاحة والعروض -->
+    <div class="top-bar">
+        <div class="container d-flex justify-between align-center">
+            <span class="offer-text">
+                <i class="fas fa-fire"></i> <span data-i18n="offer">خصم 20% هذا الأسبوع باستخدام كوبون: SMART20 + وصول لمقالات مجانية</span>
+            </span>
+            <div class="accessibility-controls">
+                <button onclick="toggleLanguage()" class="btn-icon" aria-label="تغيير اللغة للموقع" title="Language Translation">
+                    <i class="fas fa-globe"></i> <span id="langLabel">English</span>
+                </button>
+                <button onclick="toggleContrast()" class="btn-icon" aria-label="تفعيل وضع التباين العالي للقراءة" title="High Contrast Mode">
+                    <i class="fas fa-adjust"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- شريط التصفح الرئيسي -->
+    <header class="navbar glass-effect sticky-top">
+        <div class="container d-flex justify-between align-center">
+            <div class="logo">
+                <i class="fas fa-brain text-primary"></i> <span data-i18n="logo">ClickBay</span>
+                <span class="trust-badge"><i class="fas fa-check-circle"></i> موثوق 100%</span>
+            </div>
+            <nav>
+                <ul class="nav-links d-flex">
+                    <li><a href="#digital" data-i18n="nav_digital">المنتجات الرقمية</a></li>
+                    <li><a href="#physical" data-i18n="nav_physical">أمازون & Temu</a></li>
+                    <li><a href="#ats" data-i18n="nav_ats">سير ذاتية (ATS)</a></li>
+                    <li><a href="#blog" data-i18n="nav_blog">المدونة التعليمية</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions d-flex">
+                <button class="btn-icon" aria-label="الدعم المباشر"><i class="fas fa-headset"></i></button>
+                <button class="btn-icon" aria-label="سلة المشتريات"><i class="fas fa-shopping-cart"></i></button>
+                <button class="btn-primary" data-i18n="login">تسجيل الدخول</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي ومربع بحث الذكاء الاصطناعي -->
+    <section class="hero animated-bg">
+        <div class="container text-center">
+            <h1 class="hero-title" data-i18n="hero_title">اكتشف رحلة تعلمك بذكاء متقدم</h1>
+            <p class="hero-subtitle" data-i18n="hero_desc">كورسات فيديو مدعمة بلغة الإشارة، كتب إلكترونية تفاعلية، ومنتجات تقنية مختارة من أمازون بعناية تناسب اهتماماتك.</p>
+            
+            <div class="ai-search-container">
+                <div class="ai-search-box glass-effect">
+                    <i class="fas fa-robot text-primary pulse-anim"></i>
+                    <input type="text" id="aiSearchInput" aria-label="ابحث بالذكاء الاصطناعي" placeholder="أخبر المساعد الذكي بما تود تعلمه أو شرائه..." data-i18n-placeholder="search_placeholder">
+                    <button onclick="performAISearch()" class="btn-ai" data-i18n="search_btn">توصيات AI <i class="fas fa-magic"></i></button>
+                </div>
+                <div id="aiSearchResults" class="search-results hidden"></div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container py-4">
+        <!-- المنتجات الرقمية (كتب، كورسات، إتاحة) -->
+        <section id="digital" class="section">
+            <div class="section-header text-center">
+                <h2 data-i18n="digital_title">الكورسات والكتب الإلكترونية (محسنة للإتاحة)</h2>
+                <p>محتوى يدعم الصم والبكم مع ترجمات نصية وإشارات واضحة.</p>
+            </div>
+            
+            <div class="grid-3">
+                <!-- كورس -->
+                <div class="product-card">
+                    <div class="card-badge bg-success">فيديو + نصوص كاملة</div>
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&q=80" alt="كورس الذكاء الاصطناعي">
+                        <div class="overlay-play"><i class="fas fa-play-circle"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <h3>أساسيات الذكاء الاصطناعي 2026</h3>
+                        <p class="text-sm">يشمل ترجمات نصية مغلقة (CC) ولغة إشارة اختيارية وتصميم عالي التباين.</p>
+                        <div class="reviews">
+                            <span class="stars">⭐⭐⭐⭐⭐</span> <span class="text-sm">(450 تقييم موثوق)</span>
+                        </div>
+                        <div class="price-row d-flex justify-between align-center">
+                            <span class="price">$29.99</span>
+                            <button class="btn-primary btn-sm">شراء الآن</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PDF -->
+                <div class="product-card">
+                    <div class="card-badge bg-warning text-dark">كتاب PDF - حقوق ريسيل</div>
+                    <div class="img-container">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&q=80" alt="كتاب إلكتروني">
+                    </div>
+                    <div class="product-info">
+                        <h3>دليل احتراف التسويق الرقمي</h3>
+                        <p class="text-sm">شامل الترخيص لإعادة البيع، مهيأ كليًا ليُقرأ بواسطة قارئات الشاشة للمكفوفين.</p>
+                        <div class="reviews">
+                            <span class="stars">⭐⭐⭐⭐½</span> <span class="text-sm">(120 تقييم)</span>
+                        </div>
+                        <div class="price-row d-flex justify-between align-center">
+                            <span class="price">$15.00</span>
+                            <button class="btn-primary btn-sm">تحميل وعينة</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- سياسة الشراء للإلكترونيات -->
+                <div class="policy-card glass-effect d-flex flex-column justify-center align-center text-center">
+                    <i class="fas fa-shield-alt icon-large text-primary"></i>
+                    <h3>سياسة استرجاع واضحة</h3>
+                    <p>يحق لك تجربة المنتجات الرقمية لمدة 14 يومًا. إذا لم تناسبك، نضمن لك استرداد أموالك بالكامل بدون أسئلة معقدة.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- منتجات الأفلييت (أمازون، Temu) -->
+        <section id="physical" class="section bg-light rounded-section p-4">
+            <div class="section-header text-center">
+                <h2>إلكترونيات وأدوات تعليمية (Amazon / Temu)</h2>
+                <p>منتجات مادية موثوقة نختارها لك بدقة من برامج الأفلييت مع صور حقيقية.</p>
+            </div>
+            
+            <div class="grid-3">
+                <div class="product-card affiliate-card">
+                    <div class="card-badge affiliate-badge"><i class="fab fa-amazon"></i> Amazon Affiliate</div>
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="سماعات مانعة للضوضاء">
+                    <div class="product-info">
+                        <h3>سماعات بلوتوث مانعة للضوضاء</h3>
+                        <p class="text-sm">مثالية للتركيز أثناء التعلم. تقييم 4.8/5 على أمازون، استيراد مباشر.</p>
+                        <div class="shipping-info text-sm text-success">
+                            <i class="fas fa-truck"></i> شحن مضمون مع سياسة إرجاع أمازون القياسية 30 يوم.
+                        </div>
+                        <button class="btn-amazon mt-2 w-100">عرض على أمازون</button>
+                    </div>
+                </div>
+                
+                <div class="product-card affiliate-card">
+                    <div class="card-badge affiliate-badge tamu-badge"><i class="fas fa-shopping-bag"></i> Temu Pick</div>
+                    <img src="https://images.unsplash.com/photo-1520085601670-ee14aa5fa3e8?w=500&q=80" alt="أدوات مكتبية ذكية">
+                    <div class="product-info">
+                        <h3>طقم إضاءة مكتبية ذكية</h3>
+                        <p class="text-sm">إضاءة حماية للعين مريحة للدراسة الليلية. جودة عالية وموثوقة.</p>
+                        <div class="shipping-info text-sm text-success">
+                            <i class="fas fa-truck"></i> شحن وتوصيل مجاني لطلبيات محددة.
+                        </div>
+                        <button class="btn-temu mt-2 w-100">تسوق من Temu</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- خدمات بناء السير الذاتية ATS -->
+        <section id="ats" class="section">
+            <div class="ats-banner d-flex align-center rounded-section glass-effect overflow-hidden">
+                <div class="ats-content p-4">
+                    <h2 class="text-primary mb-2">منشئ السير الذاتية بالذكاء الاصطناعي (ATS)</h2>
+                    <p class="mb-3">هل مللت من رفض السير الذاتية أوتوماتيكيًا؟ استخدم نظامنا المتوافق مع أنظمة تتبع المتقدمين (ATS). يحلل النظام متطلبات الوظيفة ويعيد صياغة سيرتك رقمياً لتحقيق أعلى تطابق.</p>
+                    <ul class="features-list mb-3">
+                        <li><i class="fas fa-check"></i> 100% متوافق مع خوارزميات ATS</li>
+                        <li><i class="fas fa-check"></i> تحسين تلقائي للكلمات المفتاحية</li>
+                        <li><i class="fas fa-check"></i> قوالب احترافية وبسيطة</li>
+                    </ul>
+                    <button class="btn-primary">جرب أداة ATS مجانًا</button>
+                </div>
+                <div class="ats-image d-none d-md-block">
+                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=500&q=80" alt="ATS Resume Builder" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </section>
+
+        <!-- المدونة والمحتوى التعليمي المجاني -->
+        <section id="blog" class="section text-center">
+            <h2 class="mb-3">مدونة المعرفة والأدوات التفاعلية</h2>
+            <p class="mb-4">مقالات قصيرة، نصائح يومية، ومحتوى ذكي يتكيف مع ما تقرأه.</p>
+            <div class="grid-3">
+                <article class="blog-card text-right align-start drop-shadow">
+                    <h3>5 نصائح لاجتياز مقابلات العمل</h3>
+                    <p class="text-sm text-muted">مقال قصير مدعوم بنظام ملخصات صوتية...</p>
+                    <a href="#" class="text-primary mt-auto">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+                </article>
+                <article class="blog-card text-right align-start drop-shadow">
+                    <h3>أداة تقييم المهارات AI السريعة</h3>
+                    <p class="text-sm text-muted">أداة تفاعلية لتحديد الكورسات المناسبة لك استناداً لإجاباتك.</p>
+                    <a href="#" class="text-primary mt-auto">ابدأ التقييم <i class="fas fa-bolt"></i></a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر - التذييل -->
+    <footer class="main-footer pt-4 pb-2">
+        <div class="container grid-3 mb-4">
+            <div>
+                <h3 class="mb-2"><i class="fas fa-brain"></i> إيد</h3>
+                <p class="text-sm mb-2">منصتك الموثوقة للتطوير المستمر. نؤمن ببيئة تعليمية وتسويقية متاحة للجميع بمختلف قدراتهم.</p>
+                <div class="social-links">
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="mb-2">دعم ومساعدة متقدمة</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-headset text-primary"></i> محادثة مباشرة 24/7</a></li>
+                    <li><a href="#"><i class="fas fa-envelope text-primary"></i> Email المطور للبلاغات</a></li>
+                    <li><a href="#"><i class="fas fa-sync text-primary"></i> سياسة الشراء والاسترجاع</a></li>
+                    <li><a href="#"><i class="fas fa-universal-access text-primary"></i> بيان الإتاحة وسهولة الوصول</a></li>
+                </ul>
+            </div>
+            
+            <div class="text-center">
+                <h3 class="mb-2">تسوق بأمان تام</h3>
+                <div class="payment-methods mb-2">
+                    <i class="fab fa-paypal" title="PayPal"></i>
+                    <i class="fab fa-stripe" title="Stripe"></i>
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="MasterCard"></i>
+                </div>
+                <div class="secure-badge">
+                    <i class="fas fa-lock text-success"></i> اتصال HTTPS مشفر
+                </div>
+            </div>
+        </div>
+        <div class="border-top text-center pt-2 text-sm text-muted">
+            <p>&copy; 2026 جميع الحقوق محفوظة لمنصة  ClickBay.</p>
+        </div>
+    </footer>
+
+    <!-- ملف الجافاسكريبت -->
+    <script src="script.js"></script>
+</body>
+</html>
