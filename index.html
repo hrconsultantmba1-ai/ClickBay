@@ -220,6 +220,31 @@
 
     </main>
 
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="payment-modal">
+        <div class="payment-box">
+            <h3 class="text-primary mb-3"><i class="fas fa-lock"></i> بوابة الدفع الآمنة</h3>
+            <p id="paymentItemName" class="text-sm border-bottom pb-2">شراء المنتج</p>
+            <div id="paymentAmount" class="text-glow font-bold mt-2" style="font-size:1.5rem">$0.00</div>
+            
+            <div class="mt-4 text-left" style="direction:ltr;">
+                <label class="text-sm text-gray">Card Number</label>
+                <input type="text" class="payment-input" placeholder="**** **** **** ****" value="4532 9812 3456 7890">
+                <div class="d-flex gap-2">
+                    <input type="text" class="payment-input" placeholder="MM/YY" value="12/28">
+                    <input type="text" class="payment-input" placeholder="CVC" value="123">
+                </div>
+            </div>
+            
+            <div class="mt-3 text-success text-sm font-bold">
+                <i class="fas fa-check-circle"></i> مرتبط بحساب المالك (IBAN: SA98****1234)
+            </div>
+
+            <button class="btn-pay" onclick="processPayment()">تأكيد الدفع ونشر الموقع <i class="fas fa-rocket"></i></button>
+            <button class="btn-outline-primary mt-2 w-100" onclick="closePayment()" style="border:none; color:#999;">إلغاء</button>
+        </div>
+    </div>
+
     <!-- الفوتر - التذييل -->
     <footer class="main-footer pt-5 pb-3 glass-effect" style="background: rgba(10, 10, 10, 0.9);">
         <div class="container text-center text-white">
