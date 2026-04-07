@@ -79,7 +79,7 @@
         </div>
         <div class="container text-center relative z-10">
             <h1 class="hero-title" data-i18n="hero_title">أقوى منصة ذكية لتطوير مهاراتك 🚀</h1>
-            <p class="hero-subtitle mb-4 text-glow" data-i18n="hero_desc">العب يلا! تعلم الذكاء الاصطناعي، التصميم الجرافيكي، وتسوق أحدث التقنيات مع عروض تتحدث كل ثانيتين.</p>
+            <p class="hero-subtitle mb-4 text-glow" data-i18n="hero_desc">تعلم الذكاء الاصطناعي، التصميم الجرافيكي، وتسوق أحدث التقنيات بذكاء عبر منصتكم المفضلة.</p>
             
             <div class="ai-search-container mt-4">
                 <div class="ai-search-box glass-effect premium-shadow">
@@ -146,28 +146,28 @@
             </div>
         </section>
 
-        <!-- أمازون لايف (المنتجات المتحركة) -->
+        <!-- متاجر الأفلييت المدمجة (Amazon, Temu, SHEIN) -->
         <section id="physical" class="section rounded-section glass-effect p-4 mt-4 fade-in-up">
-            <div class="section-header d-flex justify-between align-center mb-4">
-                <div>
-                    <h2 class="section-title text-amazon" data-i18n="amazon_title"><i class="fab fa-amazon"></i> شاشة عروض أمازون الحية</h2>
-                    <p data-i18n="amazon_desc">تتحدث العروض كل ثانيتين! أوقف المؤشر على المنتج لالتقاط العرض.</p>
-                </div>
-                <div class="live-indicator">
-                    <span class="live-dot pulse-anim"></span> Live
+            <div class="section-header text-center mb-4">
+                <h2 class="premium-gradient-text section-title" data-i18n="store_title">أفضل المنتجات من المتاجر العالمية</h2>
+                <p data-i18n="store_desc">تسوق أحدث المنتجات من Amazon، Temu، و SHEIN عبر روابط موثوقة.</p>
+                
+                <!-- أزرار الفلترة للتحكم في عرض المنتجات -->
+                <div class="store-filters mt-4 d-flex justify-center gap-2">
+                    <button class="btn-filter active" onclick="filterStore('all')" data-i18n="filter_all">الكل</button>
+                    <button class="btn-filter filter-amazon" onclick="filterStore('amazon')" data-i18n="filter_amazon"><i class="fab fa-amazon"></i> Amazon</button>
+                    <button class="btn-filter filter-temu" onclick="filterStore('temu')" data-i18n="filter_temu">Temu</button>
+                    <button class="btn-filter filter-shein" onclick="filterStore('shein')" data-i18n="filter_shein">SHEIN</button>
                 </div>
             </div>
             
-            <div id="amazonCarouselContainer" class="carousel-container border-glow">
-                <!-- سيتم حقن المنتجات هنا عن طريق الجافاسكريبت كل ثانيتين -->
-                <div id="amazonProductDisplay" class="amazon-live-card d-flex">
-                    <div class="product-image-large loader-bg" style="width:50%; min-height:300px; border-radius:10px;"></div>
-                    <div class="product-info-large p-4" style="width:50%;">
-                        <div class="loader-line" style="width:70%;"></div>
-                        <div class="loader-line" style="width:90%; margin-top:20px;"></div>
-                        <div class="loader-line" style="width:50%; margin-top:10px;"></div>
-                    </div>
-                </div>
+            <!-- الحاوية الرئيسية التي سيتم توليد المنتجات بداخلها بواسطة الجافاسكريبت -->
+            <div id="multiStoreContainer" class="grid-3 multi-store-grid mt-4">
+                <!-- المنتجات تُحقن هنا (Reusable Components) -->
+            </div>
+            <div id="noProductsMessage" class="text-center w-100 hidden py-4 text-muted">
+                <i class="fas fa-box-open fa-3x mb-2"></i>
+                <p data-i18n="no_products">لا توجد منتجات مطابقة للفلتر المحدد.</p>
             </div>
         </section>
 
@@ -205,8 +205,8 @@
         <section id="quizzes" class="section pb-5 pt-5 fade-in-up">
             <div class="gamification-banner rounded-lg text-center p-5 text-white position-relative overflow-hidden shadow-lg display-grid place-center" style="background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d); min-height: 300px;">
                 <div class="relative z-10">
-                    <h2 class="mb-3 text-glow" style="font-size:2.5rem;" data-i18n="quiz_title">العب يلا! تحدى مهاراتك 🎮</h2>
-                    <p class="mb-4 text-glow" style="font-size:1.2rem;" data-i18n="quiz_desc">أثبت قدراتك في التكنولوجيا والتصميم في اختبار لا يتجاوز دقيقتين واربح نقاط تفاعلية.</p>
+                    <h2 class="mb-3 text-glow" style="font-size:2.5rem;" data-i18n="quiz_title">تحدى مهاراتك 🎮</h2>
+                    <p class="mb-4 text-glow" style="font-size:1.2rem;" data-i18n="quiz_desc">أثبت قدراتك في التكنولوجيا والتصميم في اختبار قصير واربح نقاط تفاعلية.</p>
                     <button class="btn-primary btn-xl btn-glow pulse-anim" onclick="startQuiz()" data-i18n="start_quiz">ابدأ التحدي الآن</button>
                 </div>
                 
