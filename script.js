@@ -13,8 +13,8 @@ const dictionary = {
         nav_quizzes: "تحدى نفسك",
         login: "ابدأ الآن",
         hero_title: "أقوى منصة ذكية لتطوير مهاراتك 🚀",
-        hero_desc: "العب يلا! تعلم الذكاء الاصطناعي، التصميم الجرافيكي، وتسوق أحدث التقنيات مع عروض تتحدث كل ثانيتين.",
-        search_placeholder: "ما الذي تريد إتقانه اليوم؟",
+        hero_desc: "تعلم الذكاء الاصطناعي، التصميم الجرافيكي، وتسوق أحدث التقنيات مع عروض تتحدث كل ثانيتين.",
+        search_placeholder: "ما الذي تريد إتقانه اليوم?",
         search_btn: "بحث سحري",
         courses_title: "دورات احترافية وتقنيات AI والتصميم",
         courses_desc: "انضم لنخبة المتعلمين في تخصصات المستقبل مع دعم شامل وتفاعلي.",
@@ -29,7 +29,7 @@ const dictionary = {
         book_2_title: "دليل الذكاء التوليدي",
         book_3_title: "أسرار التصميم الحديث",
         read_now: "اقرأ مجاناً",
-        quiz_title: "العب يلا! تحدى مهاراتك 🎮",
+        quiz_title: "تحدى مهاراتك 🎮",
         quiz_desc: "أثبت قدراتك في التكنولوجيا والتصميم في اختبار لا يتجاوز دقيقتين واربح نقاط تفاعلية.",
         start_quiz: "ابدأ التحدي الآن",
         chatbot_title: "المساعد الذكي الأول",
@@ -47,7 +47,7 @@ const dictionary = {
         nav_quizzes: "Challenge Yourself",
         login: "Get Started",
         hero_title: "The Most Powerful Smart Platform 🚀",
-        hero_desc: "Let's Play! Learn AI, UI/UX Design, and shop the latest tech with deals updating every 2 seconds.",
+        hero_desc: "Learn AI, UI/UX Design, and shop the latest tech with deals updating every 2 seconds.",
         search_placeholder: "What do you want to master today?",
         search_btn: "Magic Search",
         courses_title: "Pro Courses, AI Tech & Design",
@@ -63,7 +63,7 @@ const dictionary = {
         book_2_title: "Generative AI Guide",
         book_3_title: "Modern Design Secrets",
         read_now: "Read for Free",
-        quiz_title: "Let's Play! Challenge Your Skills 🎮",
+        quiz_title: "Challenge Your Skills 🎮",
         quiz_desc: "Prove your abilities in tech and design in a 2-minute test and win interactive points.",
         start_quiz: "Start Challenge Now",
         chatbot_title: "Ultimate AI Assistant",
@@ -145,8 +145,8 @@ function sendChatMessage() {
     setTimeout(() => {
         document.getElementById(loadingId).remove();
         const reply = currentLang === 'ar' 
-            ? "أنا المساعد الذكي، يمكنني الرد آلياً فوراً ومساعدتك في اختيار كورسات الذكاء الاصطناعي والتصميم! العب يلا!" 
-            : "I am the smart AI assistant, I can reply automatically and help you choose AI and Design courses! Let's play!";
+            ? "أنا المساعد الذكي، يمكنني الرد آلياً فوراً ومساعدتك في اختيار كورسات الذكاء الاصطناعي والتصميم!" 
+            : "I am the smart AI assistant, I can reply automatically and help you choose AI and Design courses!";
         addMessage(reply, 'ai');
     }, 1000);
 }
@@ -306,7 +306,7 @@ function submitQuiz(selectedIndex) {
     const res = document.getElementById('quizResult');
     res.classList.remove('hidden');
     if (selectedIndex === quizData.correct) {
-        res.innerHTML = '<span class="text-success"><i class="fas fa-trophy"></i> إجابة صحيحة! كسبت 500 نقطة. العب يلا!</span>';
+        res.innerHTML = '<span class="text-success"><i class="fas fa-trophy"></i> إجابة صحيحة! كسبت 500 نقطة.</span>';
     } else {
         res.innerHTML = '<span class="text-amazon"><i class="fas fa-times"></i> خطأ! الإجابة هي Midjourney. حاول مرة أخرى.</span>';
     }
